@@ -1,16 +1,39 @@
+import { FaArrowLeft } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 type HEADER_TYPE = "profile" | "backMenu"
+// const color = "#d1d5db";
 
 interface IProps {
     type: HEADER_TYPE;
+    label?: string;
+    href?: string;
 }
 
-function Header({ type }: IProps) {
+interface IPropsBackMenu {
+    label: string;
+    href: string;
+}
+
+function Header({ type, label, href }: IProps) {
     switch (type) {
         case "profile":
             return <HeaderProfile />
+        default:
+            return <BackMenu label={label || ""} href={href || ""} />
     }
+}
+
+function BackMenu({ href, label }: IPropsBackMenu) {
+    return (
+        <header className="flex items-center p-4 gap-4 bg-primary">
+            <Link to={href}>
+                <FaArrowLeft color="white" />
+            </Link>
+            <p className="text-white">{label}</p>
+        </header>
+    )
 }
 
 function HeaderProfile() {

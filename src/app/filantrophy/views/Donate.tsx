@@ -1,6 +1,9 @@
+import Header from "../../global/components/Header"
+
 function Donate() {
     return (
         <>
+            <Header type="backMenu" href="/filantrophy" label="Donasi" />
             <div className="p-4 flex flex-col gap-8">
                 <h1 className="text-2xl">Kirim Bukti Transfer</h1>
                 <textarea name="massage" id="massage" placeholder="Message" className="bg-primarySurface p-4 h-44 rounded-lg border border-black" />
