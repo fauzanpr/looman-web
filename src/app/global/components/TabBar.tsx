@@ -16,7 +16,7 @@ function TabBar() {
 
     return (
         <>
-            {isAdd ? <Link to="donate" className={`bg-primary w-4/5 text-white text-base py-3 px-10 rounded-xl absolute bottom-24 left-1/2 -translate-x-1/2`}>Mulai Donasi</Link> : null}
+            {isAdd ? <Link to="donate" className={`bg-primary w-4/5 text-center text-white text-base py-3 px-10 rounded-xl absolute bottom-24 left-1/2 -translate-x-1/2`}>Mulai Donasi</Link> : null}
             <div className="p-4 flex justify-between items-end fixed w-full bottom-0 bg-white">
                 <div className="flex flex-col justify-center items-center">
                     <RiHome2Fill size={iconSize} color={color} />
