@@ -2,7 +2,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-type HEADER_TYPE = "profile" | "backMenu"
+export type HEADER_TYPE = "profile" | "backMenu"
 // const color = "#d1d5db";
 
 interface IProps {

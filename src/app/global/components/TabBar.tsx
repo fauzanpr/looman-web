@@ -5,6 +5,8 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { RiFileHistoryFill, RiHome2Fill } from "react-icons/ri"
 import { Link } from "react-router-dom";
 
+// type TAB_LIST = "home" | "history" | "news" | "profile"; 
+
 function TabBar() {
     const color = "#d1d5db";
     const colorActive = "#20b3ab";
@@ -13,6 +15,16 @@ function TabBar() {
     const iconSize = 25;
 
     const [isAdd, setIsAdd] = useState(false);
+    // const [tabActive, setTabActive] = useState<TAB_LIST>("home");
+
+    // useEffect(() => {
+    //     const url = window.location.href.split("/");
+    //     if (url.length === 4) {
+    //         setTabActive("home");
+    //     } else {
+
+    //     }
+    // }, []);
 
     return (
         <>
@@ -42,4 +54,4 @@ function TabBar() {
     )
 }
 
-export default TabBar
+export default TabBar;

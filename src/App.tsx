@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Filantrophy from "./app/filantrophy/views";
 import Donate from "./app/filantrophy/views/Donate";
+import History from "./app/filantrophy/views/History";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/filantrophy/donate",
     element: <Donate />
+  },
+  {
+    path: "/filantrophy/history",
+    element: <History />
   }
 ])
 
