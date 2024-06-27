@@ -17,6 +17,10 @@ function FilantrophyLayout({ children, headerType, headerHref, headerTitle, head
             setTabActive("home");
         } else if (window.location.href.split("/")[4] === "history") {
             setTabActive("history");
+        } else if (window.location.href.split("/")[4] === "news") {
+            setTabActive("news");
+        } else if (window.location.href.split("/")[4] === "profile") {
+            setTabActive("profile");
         }
     }
 
