@@ -2,7 +2,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-export type HEADER_TYPE = "profile" | "backMenu" | "titleOnly";
+export type HEADER_TYPE = "profile" | "backMenu" | "titleOnly" | "none";
 // const color = "#d1d5db";
 
 interface IProps {
@@ -27,8 +27,10 @@ function Header({ type, label, href, title }: IProps) {
             return <HeaderProfile />
         case "titleOnly":
             return <TitleOnly title={title || ""} />
-        default:
+        case "backMenu":
             return <BackMenu label={label || ""} href={href || ""} />
+        default:
+            return "";
     }
 }
 

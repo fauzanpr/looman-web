@@ -3,6 +3,8 @@ import Filantrophy from "./app/filantrophy/views";
 import Donate from "./app/filantrophy/views/Donate";
 import History from "./app/filantrophy/views/history/History";
 import HistoryDetail from "./app/filantrophy/views/history/HistoryDetail";
+import News from "./app/filantrophy/views/news/News";
+import FilantrophyProfile from "./app/filantrophy/views/profile/FilantrophyProfile";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/filantrophy/history/:historyId",
     element: <HistoryDetail />
+  },
+  {
+    path: "/filantrophy/news",
+    element: <News />
+  },
+  {
+    path: "/filantrophy/profile",
+    element: <FilantrophyProfile />
   }
 ])
 
