@@ -6,6 +6,8 @@ import HistoryDetail from "../app/filantrophy/views/history/HistoryDetail";
 import News from "../app/filantrophy/views/news/News";
 import FilantrophyProfile from "../app/filantrophy/views/profile/FilantrophyProfile";
 import Login from "../app/auth/views/Login";
+import Merchant from "../app/merchant/views/Merchant";
+import MerchantAddFood from "../app/merchant/views/MerchantAddFood";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
   {
     path: "/filantrophy/profile",
     element: <FilantrophyProfile />
+  },
+  {
+    path: "/merchant",
+    element: <Merchant />
+  },
+  {
+    path: "/merchant/add",
+    element: <MerchantAddFood />
   }
 ])
 
