@@ -8,6 +8,9 @@ import FilantrophyProfile from "../app/filantrophy/views/profile/FilantrophyProf
 import Login from "../app/auth/views/Login";
 import Merchant from "../app/merchant/views/Merchant";
 import MerchantAddFood from "../app/merchant/views/MerchantAddFood";
+import Community from "../app/community/views/Community";
+import MerchantHistory from "../app/merchant/views/MerchantHistory";
+import MerchantProfile from "../app/merchant/views/MerchantProfile";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,18 @@ const router = createBrowserRouter([
   {
     path: "/merchant/add",
     element: <MerchantAddFood />
+  },
+  {
+    path: "/merchant/history",
+    element: <MerchantHistory />
+  },
+  {
+    path: "/merchant/profile",
+    element: <MerchantProfile />
+  },
+  {
+    path: "/community",
+    element: <Community />
   }
 ])
 

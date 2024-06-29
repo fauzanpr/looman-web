@@ -10,7 +10,7 @@ interface IProps {
     headerLabel?: string;
 }
 
-function MerchantLayout({ children, headerType, headerHref, headerTitle, headerLabel }: IProps) {
+function CommunityLayout({ children, headerType, headerHref, headerTitle, headerLabel }: IProps) {
     const [tabActive, setTabActive] = useState<TAB_LIST>("home");
     const getActiveTab = () => {
         if (!window.location.href.split("/")[4]) {
@@ -37,4 +37,4 @@ function MerchantLayout({ children, headerType, headerHref, headerTitle, headerL
     )
 }
 
-export default MerchantLayout;
+export default CommunityLayout;

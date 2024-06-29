@@ -32,7 +32,7 @@ function FilantrophyLayout({ children, headerType, headerHref, headerTitle, head
         <>
             <Header type={headerType} href={headerHref} title={headerTitle} label={headerLabel} />
             {children}
-            <TabBar tabActive={tabActive} setTabActive={setTabActive} />
+            <TabBar tabActive={tabActive} setTabActive={setTabActive} type="filantrophy" />
         </>
     )
 }
