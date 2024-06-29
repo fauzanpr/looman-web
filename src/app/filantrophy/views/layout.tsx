@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from "react"
 import Header, { HEADER_TYPE } from "../../global/components/Header";
 import TabBar, { TAB_LIST } from "../../global/components/TabBar";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
     children: ReactNode;
@@ -12,6 +13,7 @@ interface IProps {
 
 function FilantrophyLayout({ children, headerType, headerHref, headerTitle, headerLabel }: IProps) {
     const [tabActive, setTabActive] = useState<TAB_LIST>("home");
+    const navigate = useNavigate();
     const getActiveTab = () => {
         if (!window.location.href.split("/")[4]) {
             setTabActive("home");
@@ -27,6 +29,12 @@ function FilantrophyLayout({ children, headerType, headerHref, headerTitle, head
     useEffect(() => {
         getActiveTab();
     }, []);
+
+    useEffect(() => {
+        if (localStorage.getItem("role") !== "philanthropy") {
+          navigate("/");
+        }
+      }, [navigate]);
 
     return (
         <>

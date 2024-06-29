@@ -17,10 +17,13 @@ function useLogin() {
       if (res.data.data.role === "philanthropy") {
         toast.success("Login berhasil");
         navigate("/filantrophy")
+      } else if (res.data.data.role === "food_industry") {
+        toast.success("Login berhasil");
+        navigate("/merchant");
       }
     },
     onError: () => {
-      alert("ERROR")
+      toast.error("Login Gagal");
     }
   });
 
