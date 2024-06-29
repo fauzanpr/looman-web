@@ -11,6 +11,8 @@ import MerchantAddFood from "../app/merchant/views/MerchantAddFood";
 import Community from "../app/community/views/Community";
 import MerchantHistory from "../app/merchant/views/MerchantHistory";
 import MerchantProfile from "../app/merchant/views/MerchantProfile";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -63,8 +65,17 @@ const router = createBrowserRouter([
   }
 ])
 
+const queryClient = new QueryClient();
+
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <QueryClientProvider client={queryClient} >
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+      <Toaster />
+    </>
+  )
 }
 
 export default App;
