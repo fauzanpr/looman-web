@@ -40,6 +40,7 @@ function Filantrophy() {
                 <p className="font-light text-gray-200">{currency(item.nominal)}</p>
                 <p>{item.note}</p>
               </div>)}
+              {!isLoading && filantrophyTransaction?.data.data.length === 0 ? <p className="text-gray-400">Hai! Kamu belum memiliki riwayat donasi.</p> : null}
             </div>
             {/* {historyPage === "today" ? <Today data={filantrophyTransaction} isLoading={isLoading} /> : null}
             {historyPage === "week" ? <Week /> : null}

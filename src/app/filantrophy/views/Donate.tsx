@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../global/components/Header"
 import { FilantrophyTransactionCreationModel } from "../../../model/filantrophy/FilantrophyTransactionModel";
 import useFilantrophyTransactionMutation from "../hooks/useFilantrophyTransactionMutation";
@@ -11,11 +11,13 @@ function Donate() {
     const onSendDonate = () => {
         if (data && file) onCreate(data, file);
     }
-    const getIsActive = () => {
-        if (data?.nominal && data.note && data.status && file) {
-            return true;
-        } else return false;
-    }
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+        if (data?.nominal && data.note && file) {
+            setIsActive(true);
+        } else setIsActive(false);
+    }, [data, file]);
     return (
         <>
             <Header type="backMenu" href="/filantrophy" label="Donasi" />
@@ -41,7 +43,7 @@ function Donate() {
                     if (e.target.files) setFile(e.target.files[0])
                 }} className="bg-primarySurface p-4 rounded-lg border border-black" />
             </div>
-            <button className={`${getIsActive() ? "bg-primary" : "bg-gray-400"} text-white w-11/12 rounded-xl p-4 absolute bottom-1 left-1/2 -translate-x-1/2`} onClick={onSendDonate}>Kirim Donasi</button>
+            <button className={`${isActive ? "bg-primary" : "bg-gray-400"} text-white w-11/12 rounded-xl p-4 absolute bottom-1 left-1/2 -translate-x-1/2`} onClick={onSendDonate}>Kirim Donasi</button>
         </>
     )
 }
