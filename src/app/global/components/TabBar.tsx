@@ -6,7 +6,7 @@ import { RiFileHistoryFill, RiHome2Fill } from "react-icons/ri"
 import { Link } from "react-router-dom";
 
 export type TAB_LIST = "home" | "history" | "news" | "profile";
-export type PAGE_TYPE = "filantrophy" | "merchant";
+export type PAGE_TYPE = "filantrophy" | "merchant" | "community";
 interface IProps {
     tabActive: TAB_LIST;
     type: PAGE_TYPE;

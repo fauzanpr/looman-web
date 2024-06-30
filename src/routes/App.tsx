@@ -13,6 +13,7 @@ import MerchantHistory from "../app/merchant/views/MerchantHistory";
 import MerchantProfile from "../app/merchant/views/MerchantProfile";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
+import AddReceiver from "../app/community/views/AddReceiver";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/community",
     element: <Community />
+  },
+  {
+    path: "/community/add",
+    element: <AddReceiver />
   }
 ])
 

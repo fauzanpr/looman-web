@@ -21,6 +21,10 @@ function Login() {
         if (localStorage.getItem("token")) {
             if (localStorage.getItem("role") === "philanthropy") {
                 navigate("/filantrophy")
+            } else if (localStorage.getItem("role") === "food_industry") {
+                navigate("/merchant");
+            } else if (localStorage.getItem("role") === "community") {
+                navigate("/community");
             }
         }
     }, [navigate]);
