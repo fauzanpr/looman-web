@@ -2,10 +2,10 @@ import { useState } from "react";
 import { BsPersonFill } from "react-icons/bs";
 import { FaClock, FaWindowClose } from "react-icons/fa"
 import { FaCirclePlus } from "react-icons/fa6";
-import { RiFileHistoryFill, RiHome2Fill } from "react-icons/ri"
+import { RiDraftLine, RiFileHistoryFill, RiHome2Fill } from "react-icons/ri"
 import { Link } from "react-router-dom";
 
-export type TAB_LIST = "home" | "history" | "news" | "profile";
+export type TAB_LIST = "home" | "history" | "news" | "profile" | "receiver";
 export type PAGE_TYPE = "filantrophy" | "merchant" | "community";
 interface IProps {
     tabActive: TAB_LIST;
@@ -21,6 +21,22 @@ function TabBar({ tabActive, setTabActive, type }: IProps) {
     const iconSize = 25;
 
     const [isAdd, setIsAdd] = useState(false);
+    if (type === "community") {
+        return <div className="p-4 flex justify-between items-end fixed w-full bottom-0 bg-white">
+            <Link to="/community" className="flex flex-col justify-center items-center" onClick={() => setTabActive("home")}>
+                <RiHome2Fill size={iconSize} color={tabActive === "home" ? colorActive : color} />
+                <p className={`${textSize} ${textColor}`}>Home</p>
+            </Link>
+            <Link to="/community/receiver" className="flex flex-col justify-center items-center" onClick={() => setTabActive("receiver")}>
+                <RiDraftLine size={25} color={tabActive === "receiver" ? colorActive : color} />
+                <p className={`${textSize} ${textColor}`}>Penerima</p>
+            </Link>
+            <Link to="/community/profile" className="flex flex-col justify-center items-center" onClick={() => setTabActive("profile")}>
+                <BsPersonFill size={25} color={tabActive === "profile" ? colorActive : color} />
+                <p className={`${textSize} ${textColor}`}>Profile</p>
+            </Link>
+        </div>
+    }
     if (type === "filantrophy") {
         return (
             <>
