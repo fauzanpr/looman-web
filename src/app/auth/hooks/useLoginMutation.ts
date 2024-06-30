@@ -20,6 +20,9 @@ function useLogin() {
       } else if (res.data.data.role === "food_industry") {
         toast.success("Login berhasil");
         navigate("/merchant");
+      } else if (res.data.data.role === "community") {
+        toast.success("Login berhasil");
+        navigate("/community");
       }
     },
     onError: () => {
