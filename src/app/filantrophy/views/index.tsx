@@ -19,7 +19,7 @@ function Filantrophy() {
         <main className="px-4 py-16 flex flex-col gap-16">
           <div>
             <p className="text-gray-400 text-center text-lg">Jumlah Donasi</p>
-            <p className="text-center font-semibold text-4xl">{ isLoading ? "" : filantrophyTransaction?.data.data.length }x <span className="font-extralight">Berdonasi</span></p>
+            <p className="text-center font-semibold text-4xl">{isLoading ? "" : filantrophyTransaction?.data.data.length}x <span className="font-extralight">Berdonasi</span></p>
           </div>
 
           <div>
@@ -33,12 +33,14 @@ function Filantrophy() {
             </div> */}
             {/* </div> */}
 
-            {isLoading ? <p>Loading...</p> : filantrophyTransaction?.data.data.map(item => <div className="bg-primary p-4 rounded-lg text-white flex flex-col gap-1 " key={item.id}>
-              <p className="text-xs font-thin text-gray-100">{item.transaction_number}</p>
-              <p className="font-medium">{item.transaction_date}</p>
-              <p className="font-light text-gray-200">{currency(item.nominal)}</p>
-              <p>{item.note}</p>
-            </div>)}
+            <div className="flex flex-col gap-2">
+              {isLoading ? <p>Loading...</p> : filantrophyTransaction?.data.data.map(item => <div className="bg-primary p-4 rounded-lg text-white flex flex-col gap-1 " key={item.id}>
+                <p className="text-xs font-thin text-gray-100">{item.transaction_number}</p>
+                <p className="font-medium">{item.transaction_date}</p>
+                <p className="font-light text-gray-200">{currency(item.nominal)}</p>
+                <p>{item.note}</p>
+              </div>)}
+            </div>
             {/* {historyPage === "today" ? <Today data={filantrophyTransaction} isLoading={isLoading} /> : null}
             {historyPage === "week" ? <Week /> : null}
             {historyPage === "month" ? <Month /> : null}

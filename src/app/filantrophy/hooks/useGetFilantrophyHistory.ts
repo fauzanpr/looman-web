@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { FilantrophyTransactionModel } from "../../../model/filantrophy/FilantrophyTransactionModel";
 
+// http://localhost:8000/api/v1/philanthropy/transaction/history
 function useGetFilantrophyHistory() {
     const query = useQuery({
         queryKey: ["filantrophy-history"],
