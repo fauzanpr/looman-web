@@ -10,7 +10,6 @@ function AddReceiver() {
 
     const onSubmit = () => {
         if (data) onCreate(data);
-        console.log(data);
     }
     return (
         <CommunityLayout headerType="backMenu" headerHref="/community" headerLabel="Tambah Penerima">
@@ -26,7 +25,7 @@ function AddReceiver() {
                         })
                     }} />
                 </div>
-                <div className="w-full">
+                {/* <div className="w-full">
                     <label htmlFor="nama">Alamat</label>
                     <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
                         setData(prev => {
@@ -36,8 +35,8 @@ function AddReceiver() {
                             }
                         })
                     }} />
-                </div>
-                <div className="w-full">
+                </div> */}
+                {/* <div className="w-full">
                     <label htmlFor="nama">Narahubung</label>
                     <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
                         setData(prev => {
@@ -47,7 +46,7 @@ function AddReceiver() {
                             }
                         })
                     }} />
-                </div>
+                </div> */}
                 <div className="w-full">
                     <label htmlFor="nama">Telepon</label>
                     <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
@@ -81,7 +80,7 @@ function AddReceiver() {
                         })
                     }} />
                 </div>
-                <div className="w-full">
+                {/* <div className="w-full">
                     <label htmlFor="nama">Keterangan Tambahan</label>
                     <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
                         setData(prev => {
@@ -91,7 +90,7 @@ function AddReceiver() {
                             }
                         })
                     }} />
-                </div>
+                </div> */}
                 {/* <GMaps /> */}
                 <button className="p-4 text-white bg-primary rounded-lg" onClick={onSubmit}>{isPending ? "Menyimpan..." : "Simpan"}</button>
             </main>

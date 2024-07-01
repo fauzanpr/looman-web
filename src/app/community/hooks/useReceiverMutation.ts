@@ -8,7 +8,7 @@ function useReceiverMutation() {
     const navigate = useNavigate();
     const mutation = useMutation({
         mutationFn: (data: ReceiverCreationModel) => {
-            return axios.post("http://127.0.0.1:8000/community/receiver", data, {
+            return axios.post("http://127.0.0.1:8000/api/v1/community/receiver/store", data, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

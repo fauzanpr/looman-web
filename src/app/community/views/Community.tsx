@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CommunityLayout from "./CommunityLayout"
 import { BsChevronRight } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
-import ReceiverCard from "../components/ReceiverCard";
+// import ReceiverCard from "../components/ReceiverCard";
 import FoodIndustryCard from "../components/FoodIndustryCard";
 
 {/* <div className="w-full h-64">
@@ -34,7 +34,7 @@ function Community() {
                     <p className="block text-primary">Bantu orang sekitarmu</p>
                     <BsChevronRight size={25} color="#20b3ab" />
                 </Link>
-                <div>
+                {/* <div>
                     <div className="flex items-center justify-between mb-8">
                         <p className="text-lg font-medium">Hasil Rekomendasi Penerima</p>
                         <Link to="#"><HiArrowRight size={25} /></Link>
@@ -44,7 +44,7 @@ function Community() {
                         <ReceiverCard address="Jala Ahmad Yani" name="Ahmad" status={false} />
                         <ReceiverCard address="Jala Ahmad Yani" name="Ahmad" status={false} />
                     </div>
-                </div>
+                </div> */}
 
                 <div>
                     <div className="flex items-center justify-between mb-8">
