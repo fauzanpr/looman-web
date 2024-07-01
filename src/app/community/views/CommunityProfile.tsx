@@ -1,13 +1,16 @@
 import { IoIosLogOut } from "react-icons/io"
 import CommunityLayout from "./CommunityLayout"
 import useCommunityProfile from "../hooks/useCommunityProfile"
+import { useNavigate } from "react-router-dom";
 
 function CommunityProfile() {
     const { profile, isLoading } = useCommunityProfile();
+    const navigate = useNavigate();
     const logoutHandler = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("role");
         localStorage.removeItem("id");
+        navigate("/");
     }
 
     if (isLoading) {
