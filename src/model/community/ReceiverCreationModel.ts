@@ -13,3 +13,8 @@ export interface MapModel {
     long: string | number;
     lat: string | number;
 }
+
+export interface UpdateStatusReceiverModel {
+    _method: "PUT";
+    status: string;
+}
