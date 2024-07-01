@@ -1,10 +1,15 @@
 import { useState } from "react"
 import CommunityLayout from "./CommunityLayout"
 import { ReceiverCreationModel } from "../../../model/community/ReceiverCreationModel";
+import useReceiverMutation from "../hooks/useReceiverMutation";
+// import GMaps from "../components/GMaps";
 
 function AddReceiver() {
+    const { onCreate, isPending } = useReceiverMutation();
     const [data, setData] = useState<ReceiverCreationModel>();
+
     const onSubmit = () => {
+        if (data) onCreate(data);
         console.log(data);
     }
     return (
@@ -33,6 +38,17 @@ function AddReceiver() {
                     }} />
                 </div>
                 <div className="w-full">
+                    <label htmlFor="nama">Narahubung</label>
+                    <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                narahubung: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+                <div className="w-full">
                     <label htmlFor="nama">Telepon</label>
                     <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
                         setData(prev => {
@@ -43,7 +59,41 @@ function AddReceiver() {
                         })
                     }} />
                 </div>
-                <button className="p-4 text-white bg-primary rounded-lg" onClick={onSubmit}>Simpan</button>
+                <div className="w-full">
+                    <label htmlFor="nama">Longitude</label>
+                    <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                note: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+                <div className="w-full">
+                    <label htmlFor="nama">Latitude</label>
+                    <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                note: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+                <div className="w-full">
+                    <label htmlFor="nama">Keterangan Tambahan</label>
+                    <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                note: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+                {/* <GMaps /> */}
+                <button className="p-4 text-white bg-primary rounded-lg" onClick={onSubmit}>{isPending ? "Menyimpan..." : "Simpan"}</button>
             </main>
         </CommunityLayout>
     )

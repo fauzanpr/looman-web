@@ -33,7 +33,7 @@ function Filantrophy() {
             </div> */}
             {/* </div> */}
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mb-8">
               {isLoading ? <p>Loading...</p> : filantrophyTransaction?.data.data.map(item => <div className="bg-primary p-4 rounded-lg text-white flex flex-col gap-1 " key={item.id}>
                 <p className="text-xs font-thin text-gray-100">{item.transaction_number}</p>
                 <p className="font-medium">{item.transaction_date}</p>
