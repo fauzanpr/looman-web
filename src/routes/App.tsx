@@ -16,6 +16,7 @@ import { Toaster } from "react-hot-toast";
 import AddReceiver from "../app/community/views/AddReceiver";
 import ReceiverList from "../app/community/views/ReceiverList";
 import CommunityProfile from "../app/community/views/CommunityProfile";
+import ReceiverResgistry from "../app/community/views/ReceiverResgistry";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
   {
     path: "/community/add",
     element: <AddReceiver />
+  },
+  {
+    path: "/community/receiver/register",
+    element: <ReceiverResgistry />
   }
 ])
 

@@ -10,7 +10,7 @@ function ReceiverList() {
             <ReceiverCard name="Ahmadi" address="Suhat Indah" status={false} />
             <ReceiverCard name="Ahmadi" address="Suhat Indah" status={false} />
             <ReceiverCard name="Ahmadi" address="Suhat Indah" status={false} />
-            <Link to="/community/add" className="bg-primary p-4 text-white block text-center rounded-lg text-lg
+            <Link to="/community/receiver/register" className="bg-primary p-4 text-white block text-center rounded-lg text-lg
             ">Tambah Penerima</Link>
         </main>
     </CommunityLayout>
