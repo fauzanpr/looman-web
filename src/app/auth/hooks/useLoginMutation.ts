@@ -13,6 +13,7 @@ function useLogin() {
     onSuccess: (res) => {
       localStorage.setItem("token", res.data.data.access_token);
       localStorage.setItem("role", res.data.data.role);
+      localStorage.setItem("id", res.data.data.id.toString());
 
       if (res.data.data.role === "philanthropy") {
         toast.success("Login berhasil");

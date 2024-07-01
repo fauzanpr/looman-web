@@ -43,7 +43,7 @@ function AddReceiver() {
                         setData(prev => {
                             return {
                                 ...prev,
-                                narahubung: e.target.value
+                                contact_person: e.target.value
                             }
                         })
                     }} />
@@ -65,7 +65,7 @@ function AddReceiver() {
                         setData(prev => {
                             return {
                                 ...prev,
-                                note: e.target.value
+                                longitude: e.target.value
                             }
                         })
                     }} />
@@ -76,7 +76,7 @@ function AddReceiver() {
                         setData(prev => {
                             return {
                                 ...prev,
-                                note: e.target.value
+                                latitude: e.target.value
                             }
                         })
                     }} />
@@ -87,7 +87,7 @@ function AddReceiver() {
                         setData(prev => {
                             return {
                                 ...prev,
-                                note: e.target.value
+                                notes: e.target.value
                             }
                         })
                     }} />

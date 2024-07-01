@@ -1,10 +1,12 @@
 export interface ReceiverCreationModel {
     community_id?: string | number;
     name?: string;
-    address?: string;
     phone?: string;
+    latitude?: string;
+    longitude?: string;
+    address?: string;
     contact_person?: string;
-    note?: string;
+    notes?: string;
 }
 
 export interface MapModel {
