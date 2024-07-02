@@ -15,7 +15,7 @@ function Filantrophy() {
 
   return (
     <>
-      <FilantrophyLayout headerType={"profile"}>
+      <FilantrophyLayout headerType={"profilePoint"}>
         <main className="px-4 py-16 flex flex-col gap-16">
           <div>
             <p className="text-gray-400 text-center text-lg">Jumlah Donasi</p>

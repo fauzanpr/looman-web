@@ -4,7 +4,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { pointAtom } from "../../filantrophy/statemant/point";
 
-export type HEADER_TYPE = "profile" | "backMenu" | "titleOnly" | "none";
+export type HEADER_TYPE = "profile" | "backMenu" | "titleOnly" | "none" | "profilePoint";
 // const color = "#d1d5db";
 
 interface IProps {
@@ -31,6 +31,8 @@ function Header({ type, label, href, title }: IProps) {
             return <TitleOnly title={title || ""} />
         case "backMenu":
             return <BackMenu label={label || ""} href={href || ""} />
+        case "profilePoint":
+            return <HeaderProfileFilantrophy />
         default:
             return "";
     }
@@ -53,7 +55,7 @@ function TitleOnly({ title }: IPropsTitleOnly) {
     </header>
 }
 
-function HeaderProfile() {
+function HeaderProfileFilantrophy() {
     const point = useAtomValue(pointAtom);
     return (
         <header className="flex justify-between items-center p-4">
@@ -64,8 +66,22 @@ function HeaderProfile() {
             <div className="flex items-center gap-4">
                 <Link to="/filantrophy/point" className="flex gap-2 items-center">
                     <FaCoins color="orange" />
-                    <p>{ point.currentPoint }</p>
+                    <p>{point.currentPoint}</p>
                 </Link>
+                <IoMdNotifications color="#20B3AB" size={32} />
+            </div>
+        </header>
+    )
+}
+
+function HeaderProfile() {
+    return (
+        <header className="flex justify-between items-center p-4">
+            <div className="flex gap-4 items-center">
+                <div className="bg-slate-600 h-6 w-6 rounded-full" />
+                <p>Hi, Fauzan</p>
+            </div>
+            <div className="flex items-center gap-4">
                 <IoMdNotifications color="#20B3AB" size={32} />
             </div>
         </header>
