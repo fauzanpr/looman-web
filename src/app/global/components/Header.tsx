@@ -1,4 +1,4 @@
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaCoins } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,13 @@ function HeaderProfile() {
                 <div className="bg-slate-600 h-6 w-6 rounded-full" />
                 <p>Hi, Fauzan</p>
             </div>
-            <IoMdNotifications color="#20B3AB" size={32} />
+            <div className="flex items-center gap-4">
+                <Link to="/filantrophy/point" className="flex gap-2 items-center">
+                    <FaCoins color="orange" />
+                    <p>100</p>
+                </Link>
+                <IoMdNotifications color="#20B3AB" size={32} />
+            </div>
         </header>
     )
 }

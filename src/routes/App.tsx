@@ -17,6 +17,7 @@ import AddReceiver from "../app/community/views/AddReceiver";
 import ReceiverList from "../app/community/views/ReceiverList";
 import CommunityProfile from "../app/community/views/CommunityProfile";
 import ReceiverResgistry from "../app/community/views/ReceiverResgistry";
+import Point from "../app/filantrophy/views/Point";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/filantrophy/profile",
     element: <FilantrophyProfile />
+  },
+  {
+    path: "/filantrophy/point",
+    element: <Point />
   },
   {
     path: "/merchant",

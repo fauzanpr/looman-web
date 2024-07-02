@@ -1,12 +1,10 @@
 export interface ReceiverCreationModel {
-    community_id?: string | number;
     name?: string;
     phone?: string;
     latitude?: string;
     longitude?: string;
     address?: string;
-    contact_person?: string;
-    notes?: string;
+    age?: "anak-anak" | "remaja" | "dewasa" | "lansia";
 }
 
 export interface MapModel {

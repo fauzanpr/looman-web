@@ -8,6 +8,18 @@ function AddReceiver() {
     const { onCreate, isPending } = useReceiverMutation();
     const [data, setData] = useState<ReceiverCreationModel>();
 
+    const createAge = (e: number) => {
+        if (e <= 11) {
+            return "anak-anak";
+        } else if (e >= 12 && e <= 25) {
+            return "remaja";
+        } else if (e >= 26 && e <= 45) {
+            return "dewasa";
+        } else if (e >= 46) {
+            return "lansia";
+        }
+    };
+
     const onSubmit = () => {
         if (data) onCreate(data);
     }
@@ -76,6 +88,29 @@ function AddReceiver() {
                             return {
                                 ...prev,
                                 latitude: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+                <div className="w-full">
+                    <label htmlFor="nama">Address</label>
+                    <input type="text" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                address: e.target.value
+                            }
+                        })
+                    }} />
+                </div>
+
+                <div className="w-full">
+                    <label>Umur</label>
+                    <input type="number" className="p-2 w-full block border border-gray-300 rounded-md" onChange={e => {
+                        setData(prev => {
+                            return {
+                                ...prev,
+                                age: createAge(Number(e.target.value))
                             }
                         })
                     }} />
