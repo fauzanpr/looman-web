@@ -1,6 +1,8 @@
+import { useAtomValue } from "jotai";
 import { FaArrowLeft, FaCoins } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { pointAtom } from "../../filantrophy/statemant/point";
 
 export type HEADER_TYPE = "profile" | "backMenu" | "titleOnly" | "none";
 // const color = "#d1d5db";
@@ -52,6 +54,7 @@ function TitleOnly({ title }: IPropsTitleOnly) {
 }
 
 function HeaderProfile() {
+    const point = useAtomValue(pointAtom);
     return (
         <header className="flex justify-between items-center p-4">
             <div className="flex gap-4 items-center">
@@ -61,7 +64,7 @@ function HeaderProfile() {
             <div className="flex items-center gap-4">
                 <Link to="/filantrophy/point" className="flex gap-2 items-center">
                     <FaCoins color="orange" />
-                    <p>100</p>
+                    <p>{ point.currentPoint }</p>
                 </Link>
                 <IoMdNotifications color="#20B3AB" size={32} />
             </div>

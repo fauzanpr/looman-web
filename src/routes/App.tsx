@@ -18,6 +18,7 @@ import ReceiverList from "../app/community/views/ReceiverList";
 import CommunityProfile from "../app/community/views/CommunityProfile";
 import ReceiverResgistry from "../app/community/views/ReceiverResgistry";
 import Point from "../app/filantrophy/views/Point";
+import PointRequest from "../app/filantrophy/views/PointRequest";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/filantrophy/point",
     element: <Point />
+  },
+  {
+    path: "/filantrophy/point/request",
+    element: <PointRequest />
   },
   {
     path: "/merchant",
